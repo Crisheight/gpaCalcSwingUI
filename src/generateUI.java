@@ -10,13 +10,12 @@ public class generateUI {
         frame.setVisible(true);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 
         JButton option1Btn = new JButton("Calculate Semester GPA");
         JButton option2Btn = new JButton("Calculate Cumulative GPA");
         JButton option3Btn = new JButton("Calculate Future GPA");
         JButton option4Btn = new JButton("Show Current GPA");
-
 
         panel.add(option1Btn);
         panel.add(option2Btn);
