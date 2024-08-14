@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class generateUI {
 
@@ -8,6 +9,8 @@ public class generateUI {
         frame.setLocationRelativeTo(null);
         frame.setSize(500, 500);
         frame.setVisible(true);
+
+
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
@@ -22,7 +25,17 @@ public class generateUI {
         panel.add(option3Btn);
         panel.add(option4Btn);
 
-        frame.add(panel);
+        JPanel panelHolder = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+
+        panelHolder.add(panel);
+        frame.add(panelHolder);
+
     }
 
 
