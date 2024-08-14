@@ -1,4 +1,6 @@
 public interface gpaCalcInterface {
-    public void calculate(double[] grades, double[] credits);
-
+    double[] getClasses();
+    double[] getCredits();
+    double[] getGrades();
+    void calculate(double[] classes, double[] credits, double[] grades);
 }
