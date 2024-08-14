@@ -7,7 +7,7 @@ public class generateUI {
         JFrame frame = new JFrame("GPA Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setSize(500, 500);
+        frame.setSize(400, 400);
         frame.setVisible(true);
 
 
