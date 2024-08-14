@@ -33,7 +33,7 @@ public class generateUI {
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
 
-        panelHolder.add(panel);
+        panelHolder.add(panel, gbc);
         frame.add(panelHolder);
 
     }
