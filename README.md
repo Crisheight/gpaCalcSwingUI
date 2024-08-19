@@ -4,12 +4,12 @@ Provides a GUI menu, creating using Swing, for the user
 
 Select from:
 
-Semester GPA
+    Semester GPA
 
-Cumulative GPA
+    Cumulative GPA
 
-Future GPA
+    Future GPA
 
-Target GPA
+    Target GPA
 
-Exit Calculator
+    Exit Calculator
