@@ -3,7 +3,7 @@ import java.util.NavigableMap;
 import java.util.TreeMap;
 import java.util.Scanner;
 
-public class semesterGpaCalc implements gpaCalcInterface {
+public class SemesterGpaCalc implements GpaCalcInterface {
     private int classes;        // Stores the number of classes
     private double[] credits;   // Stores the number of credits for each class
     private double[] grades;    // Stores the grades for each class

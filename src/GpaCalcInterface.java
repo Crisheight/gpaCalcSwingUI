@@ -1,4 +1,4 @@
-public interface gpaCalcInterface {
+public interface GpaCalcInterface {
     int getClasses();
     double[] getCredits();
     double[] getGrades();

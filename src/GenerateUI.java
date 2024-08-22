@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class generateUI {
+public class GenerateUI {
 
     public void createUI() {
         JFrame frame = new JFrame("GPA Calculator");
@@ -21,7 +21,7 @@ public class generateUI {
         JButton option4Btn = new JButton("Show Current GPA");
 
         option1Btn.addActionListener(e -> {
-            semesterGpaCalc semesterGpaCalc = new semesterGpaCalc();
+            SemesterGpaCalc semesterGpaCalc = new SemesterGpaCalc();
             semesterGpaCalc.calculate(semesterGpaCalc.getClasses(), semesterGpaCalc.getCredits(), semesterGpaCalc.getGrades());
         });
 
@@ -44,4 +44,4 @@ public class generateUI {
     }
 
 
-} // End Class generateUI
+} // End Class GenerateUI
