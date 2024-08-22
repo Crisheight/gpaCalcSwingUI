@@ -7,7 +7,7 @@ public class GenerateUI {
         JFrame frame = new JFrame("GPA Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setSize(400, 400);
+        frame.setSize(400, 300);
         frame.setVisible(true);
 
 
@@ -21,8 +21,8 @@ public class GenerateUI {
         JButton option4Btn = new JButton("Show Current GPA");
 
         option1Btn.addActionListener(e -> {
-            SemesterGpaCalc semesterGpaCalc = new SemesterGpaCalc();
-            semesterGpaCalc.calculate(semesterGpaCalc.getClasses(), semesterGpaCalc.getCredits(), semesterGpaCalc.getGrades());
+            SemesterGpaForm semesterGpaForm = new SemesterGpaForm();
+            semesterGpaForm.showForm();
         });
 
         panel.add(option1Btn);
