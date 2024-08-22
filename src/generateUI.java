@@ -20,6 +20,11 @@ public class generateUI {
         JButton option3Btn = new JButton("Calculate Future GPA");
         JButton option4Btn = new JButton("Show Current GPA");
 
+        option1Btn.addActionListener(e -> {
+            semesterGpaCalc semesterGpaCalc = new semesterGpaCalc();
+            semesterGpaCalc.calculate(semesterGpaCalc.getClasses(), semesterGpaCalc.getCredits(), semesterGpaCalc.getGrades());
+        });
+
         panel.add(option1Btn);
         panel.add(option2Btn);
         panel.add(option3Btn);
