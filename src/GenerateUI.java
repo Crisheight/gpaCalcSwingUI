@@ -22,7 +22,7 @@ public class GenerateUI {
 
         option1Btn.addActionListener(e -> {
             SemesterGpaForm semesterGpaForm = new SemesterGpaForm();
-            semesterGpaForm.showForm();
+            semesterGpaForm.showForm(panel);
         });
 
         panel.add(option1Btn);
