@@ -2,25 +2,21 @@ import javax.swing.*;
 
 public class SemesterGpaForm {
 
-    public void showForm() {
-        JFrame formFrame = new JFrame("Enter Semester Details");
-        formFrame.setSize(400, 300);
-        formFrame.setLocationRelativeTo(null);
-
-        JPanel formPanel = new JPanel();
-        formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.PAGE_AXIS));
+    public void showForm(JPanel parentPanel) {
+        parentPanel.removeAll();
+        parentPanel.setLayout(new BoxLayout(parentPanel, BoxLayout.PAGE_AXIS));
 
         JTextField classesField = new JTextField(5);
-        formPanel.add(new JLabel("Enter the number of classes: "));
-        formPanel.add(classesField);
+        parentPanel.add(new JLabel("Enter the number of classes: "));
+        parentPanel.add(classesField);
 
         JTextField creditsField = new JTextField(20);
-        formPanel.add(new JLabel("Enter credit-hours per class (comma-separated):"));
-        formPanel.add(creditsField);
+        parentPanel.add(new JLabel("Enter credit-hours per class (comma-separated):"));
+        parentPanel.add(creditsField);
 
         JTextField gradesField = new JTextField(20);
-        formPanel.add(new JLabel("Enter grades per class (comma-separated):"));
-        formPanel.add(gradesField);
+        parentPanel.add(new JLabel("Enter grades per class (comma-separated):"));
+        parentPanel.add(gradesField);
 
         JButton submitBtn = new JButton("Calculate GPA");
         submitBtn.addActionListener(e -> {
@@ -32,10 +28,9 @@ public class SemesterGpaForm {
             semesterGpaCalc.calculate(classes, credits, grades);
         });
 
-        formPanel.add(submitBtn);
-        formFrame.add(formPanel);
-        formFrame.setVisible(true);
-
+        parentPanel.add(submitBtn);
+        parentPanel.revalidate();
+        parentPanel.repaint();
     }
 
     private double[] parseInput(String input) {
