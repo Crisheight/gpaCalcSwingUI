@@ -1,14 +1,7 @@
-import java.util.Map;
-import java.util.NavigableMap;
-import java.util.TreeMap;
-import java.util.Scanner;
+import java.util.*;
 
-public class SemesterGpaCalc implements GpaCalcInterface {
-    private int classes;        // Stores the number of classes
-    private double[] credits;   // Stores the number of credits for each class
-    private double[] grades;    // Stores the grades for each class
-
-    // HashMap to store grade boundaries and their corresponding GPA on a 4.0 scale
+public class SemesterGpaCalc {
+    // TreeMap to store grade boundaries and their corresponding GPA on a 4.0 scale
     private static final NavigableMap<Integer, Double> gpaScaleMap = new TreeMap<>();
 
     // Static block to initialize the gpaScaleMap
@@ -28,45 +21,7 @@ public class SemesterGpaCalc implements GpaCalcInterface {
         gpaScaleMap.put(0, 0.0);  // Default for F grade
     }
 
-    // Method to set the number of classes
-    @Override
-    public int getClasses() {
-        System.out.println("Enter the number of classes you are taking this semester: ");
-        Scanner scanner = new Scanner(System.in);
-        this.classes = scanner.nextInt();
-        return this.classes;
-    }
-
-    // Method to set the number of credits for each class
-    @Override
-    public double[] getCredits() {
-        System.out.println("Enter the number of credits for each class: ");
-        Scanner scanner = new Scanner(System.in);
-        this.credits = new double[this.classes];
-
-        for (int i = 0; i < this.classes; i++) {
-            this.credits[i] = scanner.nextDouble();
-        }
-
-        return this.credits;
-    }
-
-    // Method to set the grades for each class
-    @Override
-    public double[] getGrades() {
-        System.out.println("Enter the grades for each class: ");
-        Scanner scanner = new Scanner(System.in);
-        this.grades = new double[this.classes];
-
-        for (int i = 0; i < this.classes; i++) {
-            this.grades[i] = scanner.nextDouble();
-        }
-
-        return this.grades;
-    }
-
     // Method to convert the grades to a 4.0 scale
-    @Override
     public double convertTo4Scale(double gpa) {
         int roundedGpa = (int) Math.round(gpa);
 
@@ -79,15 +34,14 @@ public class SemesterGpaCalc implements GpaCalcInterface {
         return 0.0; // Shouldn't reach here due to the map containing 0 key, but safe fallback
     }
 
-    // Method to calculate the GPA using the stored values
-    @Override
+    // Method to calculate the GPA using the provided values
     public void calculate(int classes, double[] credits, double[] grades) {
         double totalCredits = 0;
         double totalGradePoints = 0;
 
-        for (int i = 0; i < this.classes; i++) {
-            totalCredits += this.credits[i];
-            totalGradePoints += this.credits[i] * this.grades[i];
+        for (int i = 0; i < classes; i++) {
+            totalCredits += credits[i];
+            totalGradePoints += credits[i] * grades[i];
         }
 
         double gpa = totalGradePoints / totalCredits;
