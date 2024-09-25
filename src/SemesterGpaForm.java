@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class SemesterGpaForm {
 
-    public void showForm(JPanel parentPanel) {
+    public void showForm(JPanel parentPanel, GenerateUI generateUI) {
         parentPanel.removeAll();
         parentPanel.setLayout(new BoxLayout(parentPanel, BoxLayout.PAGE_AXIS));
 
@@ -28,7 +28,11 @@ public class SemesterGpaForm {
             semesterGpaCalc.calculate(classes, credits, grades);
         });
 
+        JButton homeBtn = new JButton("Home");
+        homeBtn.addActionListener(e -> generateUI.addOptionButtons());
+
         parentPanel.add(submitBtn);
+        parentPanel.add(homeBtn);
         parentPanel.revalidate();
         parentPanel.repaint();
     }
