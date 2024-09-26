@@ -42,6 +42,11 @@ public class GenerateUI {
             semesterGpaForm.showForm(panel, this);
         });
 
+        option2Btn.addActionListener(e -> {
+            CumulativeGpaForm cumulativeGpaForm = new CumulativeGpaForm();
+            cumulativeGpaForm.showForm(panel, this);
+        });
+
         panel.add(option1Btn);
         panel.add(option2Btn);
         panel.add(option3Btn);
