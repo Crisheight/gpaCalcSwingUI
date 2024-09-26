@@ -7,8 +7,12 @@ public class CumulativeGpaForm {
         parentPanel.removeAll();
         parentPanel.setLayout(new BoxLayout(parentPanel, BoxLayout.PAGE_AXIS));
 
+        JTextField termField = new JTextField(5);
+        parentPanel.add(new JLabel("Enter the number of terms: "));
+        parentPanel.add(termField);
+
         JTextField classesField = new JTextField(5);
-        parentPanel.add(new JLabel("Enter the number of classes: "));
+        parentPanel.add(new JLabel("Enter the number of classes per term: "));
         parentPanel.add(classesField);
 
         JTextField creditsField = new JTextField(20);
