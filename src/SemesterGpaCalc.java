@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.*;
 
 public class SemesterGpaCalc {
@@ -47,6 +48,8 @@ public class SemesterGpaCalc {
         double gpa = totalGradePoints / totalCredits;
 
         double gpaOn4Scale = convertTo4Scale(gpa);
-        System.out.println("Your GPA on a 4.0 scale is: " + gpaOn4Scale);
+        JOptionPane.showMessageDialog(
+                null, "Your GPA on a 4.0 scale is: " + gpaOn4Scale,
+                "GPA Result", JOptionPane.INFORMATION_MESSAGE);
     }
 }
