@@ -47,6 +47,16 @@ public class GenerateUI {
             cumulativeGpaForm.showForm(panel, this);
         });
 
+        option3Btn.addActionListener(e -> {
+            FutureGpaForm futureGpaForm = new FutureGpaForm();
+            futureGpaForm.showForm(panel, this);
+        });
+
+        option4Btn.addActionListener(e -> {
+            CurrentGpaForm currentGpaForm = new CurrentGpaForm();
+            currentGpaForm.showForm(panel, this);
+        });
+
         panel.add(option1Btn);
         panel.add(option2Btn);
         panel.add(option3Btn);
