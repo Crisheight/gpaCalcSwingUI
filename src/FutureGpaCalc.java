@@ -7,19 +7,17 @@ public class FutureGpaCalc {
         // If the user provides a valid current GPA input, use it. Otherwise, fall back to the CurrentGpa singleton value.
         double currentGpa = (currentGpaInput != null && currentGpaInput >= 0.0) ? currentGpaInput : CurrentGpa.getInstance().getCurrentGpa();
 
-        // Formula: targetGpa = (currentGpa * currentCredits + goalGpa * additionalCredits) / (currentCredits + additionalCredits)
-        double totalCredits = currentCredits + additionalCredits;
-        double totalPoints = (currentGpa * currentCredits) + (goalGpa * additionalCredits);
-        double targetGpa = totalPoints / totalCredits;
+        // Rearranged formula to calculate the required GPA for additional credits to achieve the goal GPA
+        double requiredGpa = ((goalGpa * (currentCredits + additionalCredits)) - (currentGpa * currentCredits)) / additionalCredits;
 
         // Round to two decimal places
-        targetGpa = Math.round(targetGpa * 100.0) / 100.0;
+        requiredGpa = Math.round(requiredGpa * 100.0) / 100.0;
 
-        // Display the calculated target GPA
+        // Display the required GPA for additional credits
         JOptionPane.showMessageDialog(
-                null, "Your required GPA for additional credits is: " + targetGpa,
-                "Target GPA Result", JOptionPane.INFORMATION_MESSAGE);
+                null, "You need a GPA of: " + requiredGpa + " in your additional credits to achieve your goal GPA of " + goalGpa,
+                "Required GPA Result", JOptionPane.INFORMATION_MESSAGE);
 
-        return targetGpa;
+        return requiredGpa;
     }
 }
