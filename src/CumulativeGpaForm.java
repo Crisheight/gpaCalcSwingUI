@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class CumulativeGpaForm {
 
@@ -7,30 +6,26 @@ public class CumulativeGpaForm {
         parentPanel.removeAll();
         parentPanel.setLayout(new BoxLayout(parentPanel, BoxLayout.PAGE_AXIS));
 
-        JTextField termField = new JTextField(5);
-        parentPanel.add(new JLabel("Enter the number of terms: "));
-        parentPanel.add(termField);
+        JTextField semestersField = new JTextField(5);
+        parentPanel.add(new JLabel("Enter the number of semesters: "));
+        parentPanel.add(semestersField);
 
-        JTextField classesField = new JTextField(5);
-        parentPanel.add(new JLabel("Enter the number of classes per term: "));
-        parentPanel.add(classesField);
+        JTextField gpasField = new JTextField(20);
+        parentPanel.add(new JLabel("Enter GPAs per semester (comma-separated):"));
+        parentPanel.add(gpasField);
 
-        JTextField creditsField = new JTextField(20);
-        parentPanel.add(new JLabel("Enter credit-hours per class (comma-separated):"));
-        parentPanel.add(creditsField);
+        JTextField creditHoursField = new JTextField(20);
+        parentPanel.add(new JLabel("Enter total credit-hours per semester (comma-separated):"));
+        parentPanel.add(creditHoursField);
 
-        JTextField gradesField = new JTextField(20);
-        parentPanel.add(new JLabel("Enter grades per class (comma-separated):"));
-        parentPanel.add(gradesField);
-
-        JButton submitBtn = new JButton("Calculate GPA");
+        JButton submitBtn = new JButton("Calculate Cumulative GPA");
         submitBtn.addActionListener(e -> {
-            int classes = Integer.parseInt(classesField.getText());
-            double[] credits = parseInput(creditsField.getText());
-            double[] grades = parseInput(gradesField.getText());
+            int semesters = Integer.parseInt(semestersField.getText());
+            double[] gpas = parseInput(gpasField.getText());
+            double[] creditHours = parseInput(creditHoursField.getText());
 
-            SemesterGpaCalc semesterGpaCalc = new SemesterGpaCalc();
-            semesterGpaCalc.calculate(classes, credits, grades);
+            CumulativeGpaCalc cumulativeGpaCalc = new CumulativeGpaCalc();
+            cumulativeGpaCalc.calculate(semesters, gpas, creditHours);
         });
 
         JButton homeBtn = new JButton("Home");
