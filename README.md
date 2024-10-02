@@ -10,6 +10,4 @@ Select from:
 
     Future GPA
 
-    Target GPA
-
-    Exit Calculator
+    Current GPA
